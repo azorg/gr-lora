@@ -197,7 +197,7 @@ namespace gr {
       unsigned char reordered[INTERLEAVER_BLOCK_SIZE];
 
       // Block interleaver: interleave PPM codewords at a time into 4+RDD codewords
-      for (int block_count = 0; block_count < codewords.size()/ppm; block_count++)
+      for (int block_count = 0; block_count < (codewords.size()+ppm-1)/ppm; block_count++)
       {
 
         memset(block, 0, INTERLEAVER_BLOCK_SIZE*sizeof(unsigned char));
